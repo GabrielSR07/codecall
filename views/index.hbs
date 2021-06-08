@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../public/stylesheets/style.css">
+
+
+<div class="row">
+    <div class="col-md-8">
+        <br>
+        <div class="home">
+        <h1 class="codecall">CodeCall</h1>
+        <p class="index">Welcome to CodeCall</p>
+        <p class="index">A platform to share your code with others.</p>
+        </div>
+
+        <br/>
+
+        {{#if user}}
+        <br>
+            <a href="/createTask" class="btn btn-primary">Create a new Room</a>
+        {{/if}}
+    </div>
+    <div class="col-md-4">
+
+        {{#if user}}
+            <br>
+            <br>
+            <h2>My Rooms</h2>
+            <ul>
+                {{#each tasks}}
+                    <li><a href="/task/{{this._id}}">{{this._id}}</a></li>
+                {{/each}}
+            </ul>
+        {{/if}}
+
+    </div>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form action="./login" method="post" class="form-signin">
+
+                <br>
+                <h1 class="text-center">Login</h1>
+                <br>
+                <br>
+                 {{#each errorMessages}}
+                    <div class="alert alert-danger">
+                    {{this.param}} : {{this.msg}}
+                    </div>
+                {{/each}}
+
+                
+                <input class="form-control" name="email" placeholder="email@example.com" autofocus value={{name}}><br/>
+                <input type="password" class="form-control" name="password" placeholder="Password" autofocus><br/>
+                <button  class="btn btn-success w-100" type="submit">Log in</button>
+                <br>
+                <br>
+                <h4 class="text-center">--- Or --- </h4>
+                <br>
+                <a href="../auth/facebook" class="btn btn-primary w-100" >Log in with Facebook</a>
+
+            </form>
+            </div>
+        </div>
+    </div>
