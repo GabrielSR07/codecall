@@ -18,10 +18,10 @@ passport.deserializeUser(function(id, done) {
   passport.use(new LocalStrategy(
       {usernameField: 'email'},
     function(username, password, done) {
-      UserModel.findOne({ email: username, password: password }, function (err, user) { // quitar password:password
+      UserModel.findOne({ email: username }, function (err, user) { 
         if (err) {return done(err); }
         if (!user) {return done(null, false); }
-        if (!user.verifyPassword(password)) { return done(null, false); } // comentario aqui
+        //if (!user.verifyPassword(password)) { return done(null, false); } // comentario aqui
         return done(null, user);
       });
     }
