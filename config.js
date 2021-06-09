@@ -4,7 +4,7 @@
 module.exports = {
     'env': 'dev',
     url: {
-        'prod': 'http://localhost:3000',
+        'prod': 'https://code-call.herokuapp.com/',
         'dev': 'http://localhost:3000'
     },
     db: {
