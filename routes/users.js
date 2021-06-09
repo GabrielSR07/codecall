@@ -148,7 +148,7 @@ router.get('/logout', (req, res, next) => {
 
 
 
-/*
+
 router.post('/login', [
  
   body('email').not().isEmpty().withMessage("Email field cannot be empty"),
@@ -212,7 +212,7 @@ async (req, res, next) => {
  
 })
 
-*/
+
 
 
 
