@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')(); // probando ()
+const mongoose = require('mongoose'); // probando ()
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
