@@ -5,6 +5,7 @@ module.exports = {
     'env': 'dev',
     url: {
         'prod': 'https://code-call.herokuapp.com/',
+        // 'prod': 'http://localhost:3000',
         'dev': 'http://localhost:3000'
     },
     db: {
@@ -26,7 +27,7 @@ module.exports = {
         }
     },
    // dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
-   dbConnstring: 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+   dbConnstring: 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/Codecall?retryWrites=true&w=majority',
     'sessionKey': 'HelloCodeCall',
 }  
 

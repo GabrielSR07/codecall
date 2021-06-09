@@ -118,15 +118,15 @@ async function(req, res, next){
   }
   catch(e){
 
-    const {name, email, password} = req.body;
+    //const {name, email, password} = req.body;
 
     errors = [];
     errors.push({msg: "Something went wrong! Cannot complete the action", param: 'email'});
     return res.render('register', {
       title: 'Register',
-      'name': name,
-      'email': email,
-      'password': password,
+      'name': req.body.name,
+      'email': req.body.email,
+      'password': req.body.password,
       'errorMessages': errors
     })
   }
@@ -151,7 +151,7 @@ router.get('/logout', (req, res, next) => {
 
 
 
-
+/*
 router.post('/login', [
  
   body('email').not().isEmpty().withMessage("Email field cannot be empty"),
@@ -215,7 +215,7 @@ async (req, res, next) => {
  
 })
 
-
+*/
 
 
 
