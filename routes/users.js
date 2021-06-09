@@ -29,7 +29,7 @@ async function(req, res, next){
 
   var errors;
 
-  try{
+  //try{
 
       //validate input
       errors = validationResult(req);
@@ -115,13 +115,15 @@ async function(req, res, next){
         }
       });
 
-  }
+  //}
+
+  /* Esto no estaba comentado
   catch(e){
 
     //const {name, email, password} = req.body;
 
     errors = [];
-    errors.push({msg: "Something went wrong! Cannot complete the action", param: 'email'});
+    errors.push({msg: "Something went wrong! Cannot complete the action. No se que carajo pasa", param: 'email'});
     return res.render('register', {
       title: 'Register',
       'name': req.body.name,
@@ -129,7 +131,8 @@ async function(req, res, next){
       'password': req.body.password,
       'errorMessages': errors
     })
-  }
+  } 
+  */
 
 });
 
