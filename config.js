@@ -25,7 +25,8 @@ module.exports = {
             rejectUnauthorized: false
         }
     },
-    dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
+   // dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
+   dbConnstring: 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     'sessionKey': 'HelloCodeCall',
 }  
 
