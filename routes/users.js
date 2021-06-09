@@ -29,7 +29,7 @@ async function(req, res, next){
 
   var errors;
 
-  //try{
+  try{
 
       //validate input
       errors = validationResult(req);
@@ -115,9 +115,9 @@ async function(req, res, next){
         }
       });
 
-  //}
+  }
 
-  /* Esto no estaba comentado
+  
   catch(e){
 
     //const {name, email, password} = req.body;
@@ -132,7 +132,7 @@ async function(req, res, next){
       'errorMessages': errors
     })
   } 
-  */
+  
 
 });
 

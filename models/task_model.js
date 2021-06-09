@@ -1,5 +1,5 @@
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')(); //probando ()
 
 var TaskSchema = mongoose.Schema;
 

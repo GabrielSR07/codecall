@@ -10,7 +10,8 @@ module.exports = {
     },
     db: {
         'prod': process.env.DB_CONN,
-        'dev': 'mongodb://localhost/codecall'
+        //'dev': 'mongodb://localhost/codecall'
+        'dev': 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/Codecall?retryWrites=true&w=majority'
     },
     mailer: {
         service: 'Gmail',
