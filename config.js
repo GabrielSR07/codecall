@@ -10,8 +10,8 @@ module.exports = {
     },
     db: {
         'prod': process.env.DB_CONN,
-        'dev': 'mongodb://localhost/codecall'
-        //'dev': 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/Codecall?retryWrites=true&w=majority'
+        //'dev': 'mongodb://localhost/codecall'
+        'dev': 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/Codecall?retryWrites=true&w=majority'
     },
     mailer: {
         service: 'Gmail',
@@ -27,8 +27,8 @@ module.exports = {
             rejectUnauthorized: false
         }
     },
-    dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
-   //dbConnstring: 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    //dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
+   dbConnstring: 'mongodb+srv://admin:pass1234@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     'sessionKey': 'HelloCodeCall',
 }  
 

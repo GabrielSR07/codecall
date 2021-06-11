@@ -17,8 +17,8 @@ passport.deserializeUser(function(id, done) {
 
   passport.use(new LocalStrategy(
       {usernameField: 'email'},
-    function(username, password, done) {
-      UserModel.findOne({ email: username }, function (err, user) { 
+    async function(username, password, done) {
+      await UserModel.findOne({ email: username }, function (err, user) { 
         if (err) {return done(err); }
         if (!user) {return done(null, false); }
         //if (!user.verifyPassword(password)) { return done(null, false); } // comentario aqui
@@ -40,14 +40,14 @@ passport.deserializeUser(function(id, done) {
 
   
   function(accessToken, refreshToken, profile, cb) {
-    UserModel.findOne({ facebookId: profile.id }, function (err, user) {
+    UserModel.findOne({ facebookId: profile.id }, async function (err, user) {
       
       console.log(err)
       if(err) return cb(err);
        
       if(user) return cb(null, user);
 
-      UserModel.findOne({email: profile.emails[0].value}, function(err, user){
+       await UserModel.findOne({email: profile.emails[0].value}, function(err, user){
           
         if(err) return cb(err);
 
