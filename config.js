@@ -4,7 +4,7 @@
 module.exports = {
     'env': 'dev',
     url: {
-        'prod': 'https://code-call.herokuapp.com/',
+        'prod': 'codecall.vercel.app',
         //'prod': 'http://localhost:3000',
         'dev': 'http://localhost:3000'
     },
