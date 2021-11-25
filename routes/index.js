@@ -36,7 +36,7 @@ async (req, res) => {
   var errors = validationResult(req);
   if(!errors.isEmpty()){
     res.render('contact', {
-      title: 'Contact me!',
+      title: 'Contactanos!',
       'name': req.body.name,
       'email': req.body.email,
       'message': req.body.message,
@@ -47,8 +47,8 @@ async (req, res) => {
 
     try{
       await Mailer("demo.codecall@gmail.com", req.body.message);
-      await Mailer(req.body.email, `Hi ${req.body.name}, \n Thanks for your message. \n\n I'll get back to you soon!`)
-      res.render('thankyou', {title: "Thank you for contacting me!"})
+      await Mailer(req.body.email, `Hola ${req.body.name}, \n Gracias por tu mensaje. \n\n Lo revisaremos en breve`)
+      res.render('thankyou', {title: "Gracias por contactarnos!"})
     }
     catch(e){
       //res.render('contact', {title: 'Contact us'});

@@ -52,7 +52,7 @@ async function(req, res, next){
       if(user){
 
         errors = [];
-        errors.push({msg: "This email is already linked to an account", param: 'email'});
+        errors.push({msg: "Este correo ya se encuentra asociado a una cuenta", param: 'email'});
 
         return res.render('register', {
           title: 'Register',
@@ -68,7 +68,7 @@ async function(req, res, next){
       if(password.trim() !== confirm_password.trim()){
 
         errors = [];
-        errors.push({msg: "Password and confirmation must be equal", param: 'email'});
+        errors.push({msg: "La contraseña y confirmación deben coincidir", param: 'email'});
 
         return res.render('register', {
           title: 'Register',
@@ -123,7 +123,7 @@ async function(req, res, next){
     //const {name, email, password} = req.body;
 
     errors = [];
-    errors.push({msg: "Something went wrong! Cannot complete the action. No se que carajo pasa", param: 'email'});
+    errors.push({msg: "Something went wrong! Cannot complete the action. ", param: 'email'});
     return res.render('register', {
       title: 'Register',
       'name': req.body.name,
@@ -138,8 +138,8 @@ async function(req, res, next){
 
 router.post('/login', 
 [
-  body('email').not().isEmpty().withMessage("You must input your email"),
-  body('password').not().isEmpty().withMessage("You must input yor password"),
+  body('email').not().isEmpty().withMessage("Debes ingresar tu email"),
+  body('password').not().isEmpty().withMessage("Debes ingresar tu contraseña"),
   passport.authenticate('local', { failureRedirect: '/users/login' }),
 ],
   function(req, res) {
@@ -151,6 +151,7 @@ router.get('/logout', (req, res, next) => {
    req.logOut();
    res.redirect('/');
 });
+
 
 
 

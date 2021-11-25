@@ -38,12 +38,14 @@ module.exports = (server) => {
 
             socket.roomId = data.roomId;
             socket.join(data.roomId)
-            io.to(socket.roomId).emit('userConnected', data.userid);
+            // io.to(socket.roomId).emit('userConnected', data.userid);
+            socket.broadcast.emit('userConnected', data.userid);
 
             socket.on('disconnect', () => {
                 //console.log(data.userid + "sssssss")
-                //socket.leave(socket.roomId);
-                io.to(socket.roomId).emit('userDisconnected', data.userid);
+                socket.leave(socket.roomId);
+                // io.to(socket.roomId).emit('userDisconnected', data.userid);
+                socket.broadcast.emit('userDisconnected', data.userid);
             })
 
             socket.on('chatMessage', function(msg){
@@ -56,4 +58,3 @@ module.exports = (server) => {
 
     });
 }
-

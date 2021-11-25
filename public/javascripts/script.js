@@ -144,7 +144,7 @@ const addVideoStream = (videoEl, stream) => {
         }
     }
 
-    //total_participants.innerHTML = totalUsers;
+    total_participants.innerHTML = totalUsers;
    
 };
 

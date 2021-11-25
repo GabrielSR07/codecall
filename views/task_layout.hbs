@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeCall | Room </title>
+    <title>CodeCall | Sala </title>
 
     <link rel="stylesheet" href="../../../lib/codemirror.css">
     <link rel="stylesheet" href="../../../theme/monokai.css">
@@ -30,10 +30,10 @@
               <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+              <a class="nav-link" href="/about">Acerca de</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact" tabindex="-1" aria-disabled="true">Contact</a>
+              <a class="nav-link" href="/contact" tabindex="-1" aria-disabled="true">Contacto</a>
             </li>
           </ul>
           
@@ -43,15 +43,15 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">{{user.name}}</a>
                   <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                    <li><a class="dropdown-item" href="/users/logout">Log out</a></li>
+                    <li><a class="dropdown-item" href="/users/logout">Cerrar sesión</a></li>
                   </ul>
                 </li>
              {{else}}
                 <li class="nav-item">
-                  <a class="nav-link" href="/users/login">Login</a>
+                  <a class="nav-link" href="/users/login">Iniciar sesión</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/users/register">Register</a>
+                  <a class="nav-link" href="/users/register">Registro</a>
                 </li>
              {{/if}}
           </ul>
@@ -63,7 +63,7 @@
     <div class="main">
       <div class="main__left">
        
-        <h4 class="text-center">Write your code here</h4>
+        <h4 class="text-center">Escribe tu código aquí.</h4>
         <div class="main__code__area">
             
              <textarea rows="4" id="code-screen">{{content}}</textarea>
@@ -82,7 +82,7 @@
               onclick="muteUnmute()"
             >
               <i class="fa fa-microphone"></i>
-              <span>Mute</span>
+              <span>Silenciar</span>
             </div>
             <div
               class="main__controls_button"
@@ -90,7 +90,7 @@
               onclick="playStop()"
             >
               <i class="fa fa-video-camera"></i>
-              <span>Pause Video</span>
+              <span>Pausar Video</span>
             </div>
           </div>
 
@@ -106,7 +106,7 @@
             -->
             <div class="main__controls_button">
               <i class="fa fa-users"></i>
-              <span>Participants</span><span id="total-participants"></span>
+              <span>Participantes</span><span id="total-participants"></span>
             </div>
             
           </div>
@@ -131,14 +131,14 @@
           <input
             type="text"
             id="chat_message"
-            placeholder="Type a message..."
+            placeholder="Escribe un mensaje..."
           />
         </div>
       </div>
     </div>
 
     <footer>
-       <p>Trabajo Especial de Grado</p>
+       <p>CodeCall</p>
        <p>&#169; 2021 Copyright. Todos los derechos reservados</p>
        
      </footer>
