@@ -1,11 +1,13 @@
 var createError = require('http-errors');
 var express = require('express');
+//var expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+//var authRouter = require('./routes/auth')
 var usersRouter = require('./routes/users');
 var taskRouter = require('./routes/task');
 
@@ -35,6 +37,8 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+//app.use(expressValidator()); //Nuevo
+
 app.use(cookieParser());
 
 app.use(session({ secret: config.sessionKey, resave: false, saveUninitialized: true }));
@@ -51,6 +55,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/', indexRouter);
+//app.use('/', authRouter);
 app.use('/', taskRouter);
 app.use('/users', usersRouter);
 

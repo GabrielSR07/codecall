@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-md-6">
               
-        <h3 class="text-center">Write your code here</h3>
+        <h3 class="text-center">Escribe tu código aquí.</h3>
 
           <textarea id="code-screen">{{content}}</textarea>
       </div>
@@ -27,7 +27,7 @@
 
           <div class="m-md-3 m-sm-1 border border-primary">
             <div class="card-header bg-primary text-white">
-              Chat Room - 
+              Sala de Chat - 
               <span class="text-white float-right" id="chatbox-username">
                 {{#if user  }}
                     {{user.name}}
@@ -38,7 +38,7 @@
             <div class="card-footer">
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Enter Message..." id="userMessage" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text bg-secondary text-white" onclick="sendMessage()" id="sendChatButton">Send</span>
+                <span class="input-group-text bg-secondary text-white" onclick="sendMessage()" id="sendChatButton">Enviar</span>
               </div>
             </div>
           </div>
@@ -59,8 +59,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="/plugins/ot/ot.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> 
-<!-- <script src="https://rocky-depths-74216.herokuapp.com/peer/peer.js"></script> -->
+<script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> 
 
 <script>
 
@@ -184,7 +183,7 @@
  
 
   //peer js
- // navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.mediaDevices.webkitGetUserMedia || navigator.mediaDevices.mozGetUserMedia;
+  navigator.mediaDevices.getUserMedia = navigator.mediaDevices.getUserMedia || navigator.mediaDevices.webkitGetUserMedia || navigator.mediaDevices.mozGetUserMedia;
 
   //PeerJs object
   var peer = new Peer(userId);
@@ -205,7 +204,7 @@
     }).then((stream) => {
       myStream = stream;
       call.answer(stream);
-      call.on('stream', function(remoteStream){
+      call.on('stream', function(video, remoteStream){
         if(!peerList.includes(call.peer)){
           addVideoStream(remoteStream)
           currentPeer = call.peerConnection
@@ -242,13 +241,13 @@
       //on recieving other user stream
       call.on('stream', function(remoteStream){
           addVideoStream(video, remoteStream)
-        /* if(!peerList.includes(call.peer)){
+         /* if(!peerList.includes(call.peer)){
           addVideoStream(remoteStream)
           currentPeer = call.peerConnection
           peerList.push(call.peer)
           
-        }
-        */
+        } */
+        
       })
 
       call.on('close', () => {
@@ -270,15 +269,15 @@
       myStream = stream;
       addVideoStream(video, stream)
 
-      /*peer.on('call', function(call){
+      peer.on('call', function(call){
         call.answer(stream)
 
         call.on('stream', function(remoteStream){
           const vide = document.createElement("video");
-          addVideoStream(vide, remoteStream)
+          addVideoStream(video, remoteStream)
         })
       })
-  */
+  
      
         
       //listen for event user connected

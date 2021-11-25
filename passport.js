@@ -27,6 +27,25 @@ passport.deserializeUser(function(id, done) {
     }
   ));
 
+  // passport.use(new LocalStrategy({
+  //   usernameField: 'email'
+  // }, function (username, password, done) {
+  //     UserModel.findOne({email:username}, function (err, user) {
+  //       if (err) return done(err);
+  //       if (!user) {
+  //         return done(null, false, {
+  //           message: 'Usuario y/o Contraseña Incorrectos'
+  //         });
+  //       }
+  //       // if(!user.validPassword(password)) {
+  //       //   return done(null, false, {
+  //       //     message: 'Usuario y/o Contraseña Incorrectos'
+  //       //   });
+  //       // }
+  //       return done(null,user);
+  //     })
+  // }));
+
 
   const url = config.env == 'dev' ? config.url.dev : config.url.prod;
 
