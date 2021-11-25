@@ -3,13 +3,16 @@
 module.exports = {
     'env': 'dev',
     url: {
+
         // 'prod': 'codecall.vercel.app',
         'prod': 'http://localhost:3000',
+
         'dev': 'http://localhost:3000'
     },
     db: {
         'prod': process.env.DB_CONN,
         'dev': 'mongodb+srv://admin:mongopass1@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
         
     },
     mailer: {
@@ -19,15 +22,19 @@ module.exports = {
         //secure: true, // true for 465, false for other ports
         auth: {
             user: "demo.codecall@gmail.com", // user email.
+
             //pass: process.env.EMAIL_PASSWORD, // user password
             pass: 'codecall123'
+
         },
         tls: {
             rejectUnauthorized: false
         }
     },
+
     dbConnstring: 'mongodb://127.0.0.1:27017/codecall',
-   //dbConnstring: 'mongodb+srv://admin:mongopass1.@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+   //dbConnstring: 'mongodb+srv://admin:mongopass1@cluster0.se27h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+
     'sessionKey': 'HelloCodeCall',
 }  
 
